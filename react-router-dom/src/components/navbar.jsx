@@ -1,11 +1,12 @@
+// src/components/Navbar.jsx
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 const Navbar = () => {
   const [cartCount, setCartCount] = useState(0);
-  const [isOpen, setIsOpen] = useState(false); // for mobile menu
+  const [isOpen, setIsOpen] = useState(false);
 
-  // Get cart count from localStorage
+  // Load cart count from localStorage
   useEffect(() => {
     const savedCart = JSON.parse(localStorage.getItem("cart")) || [];
     setCartCount(savedCart.length);
@@ -49,25 +50,24 @@ const Navbar = () => {
           </Link>
         </div>
 
-        {/* Hamburger Menu Icon for Mobile */}
-        <div className="mobile-menu-button" style={{ display: "none" }}>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            style={{
-              backgroundColor: "white",
-              border: "none",
-              borderRadius: "5px",
-              padding: "5px 10px",
-              fontSize: "20px",
-              cursor: "pointer",
-              color: "#007BFF",
-              fontWeight: "bold",
-            }}
-          >
-            {/* You can replace this text with any icon like SVG */}
-            {isOpen ? "✖" : "☰"}
-          </button>
-        </div>
+        {/* Hamburger Menu for Mobile */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          style={{
+            display: "none",
+            backgroundColor: "white",
+            border: "none",
+            borderRadius: "5px",
+            padding: "5px 10px",
+            fontSize: "20px",
+            cursor: "pointer",
+            color: "#007BFF",
+            fontWeight: "bold",
+          }}
+          className="mobile-menu-button"
+        >
+          {isOpen ? "✖" : "☰"}
+        </button>
 
         {/* Navigation Links */}
         <div

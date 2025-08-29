@@ -1,3 +1,4 @@
+// src/App.jsx
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar.jsx";
 import Home from "./pages/Home";
@@ -15,12 +16,12 @@ function App() {
       <div
         style={{
           minHeight: "100vh",
-          width: "100vw", // full viewport width
+          width: "100vw",
           background: "linear-gradient(135deg, #FFA500, #FF7F50)",
           display: "flex",
           flexDirection: "column",
-          padding: "0", // remove inner padding
-          margin: "0", // remove margin
+          padding: "0",
+          margin: "0",
           boxSizing: "border-box",
         }}
       >
